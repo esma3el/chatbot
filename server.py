@@ -10,8 +10,7 @@ def index():
 @app.post("/get_msg")
 def get_msg():
     msg = request.json
-    print(msg['data'])
-    send_message(msg=msg["data"])
+    send_message(msg)
     return Response("msg sent.",status=200)
 
 if __name__ == "__main__":
