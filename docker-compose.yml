@@ -4,9 +4,20 @@ services:
   chatbot:
     container_name: chatbot
     build: .
-    ports:
-      - 3300:3300
+    expose:
+      - 3300
     environment:
       - CHATID_PHONE=249908225563
       - URL=https://7103.api.greenapi.com/waInstance7103946502/sendMessage/c1c8c879bd8a409eb6122919c7ef6601b4d9e648c98646a585
       - CONTENT_TYPE=application/json
+
+  proxymanager:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
