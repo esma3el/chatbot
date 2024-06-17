@@ -1,12 +1,15 @@
+import os
 import requests
+from dotenv import load_dotenv
 
-def send_message(msg):
-    url = "https://7103.api.greenapi.com/waInstance7103946502/sendMessage/c1c8c879bd8a409eb6122919c7ef6601b4d9e648c98646a585"
+load_dotenv()
 
-    payload = f'{{"chatId": "249908225563@c.us", {msg} }}'
-    print(payload)
-    headers = {'Content-Type': 'application/json'}
+CHATID_PHONE = os.environ.get("CHATID_PHONE")
+URL = os.environ.get("URL")
+CONTENT_TYPE = os.environ.get("CONTENT_TYPE")
 
-    response = requests.request("POST", url, headers=headers, data = payload)
-
-    print(response.text.encode('utf8'))
+def send_message(msg):    
+    payload = f'{{"chatId": "{CHATID_PHONE}@c.us","message": "{msg}" }}'
+    headers = {'Content-Type': CONTENT_TYPE}
+    response = requests.request("POST", URL, headers=headers, data = payload)
+    return response
