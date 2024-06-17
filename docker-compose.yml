@@ -1,0 +1,12 @@
+version: '3.10'
+
+services:
+  chatbot:
+    container_name: chatbot
+    image: chabot1
+    ports:
+      - 3300:3300
+    environment:
+      - CHATID_PHONE=249908225563
+      - URL=https://7103.api.greenapi.com/waInstance7103946502/sendMessage/c1c8c879bd8a409eb6122919c7ef6601b4d9e648c98646a585
+      - CONTENT_TYPE=application/json
