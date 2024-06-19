@@ -10,6 +10,7 @@ CONTENT_TYPE = os.environ.get("CONTENT_TYPE")
 
 def send_message(msg):    
     payload = f'{{"chatId": "{CHATID_PHONE}@c.us","message": "{msg}" }}'
+    print(msg)
     headers = {'Content-Type': CONTENT_TYPE}
     response = requests.request("POST", URL, headers=headers, data = payload)
     return response
