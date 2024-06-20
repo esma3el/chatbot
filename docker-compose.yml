@@ -7,7 +7,8 @@ services:
     expose:
       - 3300
     environment:
-      - CHATID_PHONE=249908225563
+      # - CHATID_PHONE=249908225563
+      - CHATID_PHONE=971565988576
       - URL=https://7103.api.greenapi.com/waInstance7103946502/sendMessage/c1c8c879bd8a409eb6122919c7ef6601b4d9e648c98646a585
       - CONTENT_TYPE=application/json
 

@@ -10,6 +10,10 @@ def chatbot_route():
     response = send_message(msg)
     return Response("success.",status=200)
 
+@app.get("/")
+def index():
+    return "hi ismail"
+
 if __name__ == "__main__":
     # app.run(debug=True)
     serve(app, host='0.0.0.0', port=3300)
