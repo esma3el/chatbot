@@ -12,7 +12,7 @@ def chatbot_route():
 
 @app.get("/")
 def index():
-    return "hi ismail"
+    return "hi ismail mosa ibrahim"
 
 if __name__ == "__main__":
     # app.run(debug=True)
