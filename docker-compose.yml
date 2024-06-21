@@ -7,8 +7,8 @@ services:
     expose:
       - 3300
     environment:      
-      - CHATID_PHONE=249908225563
-      - URL=https://7103.api.greenapi.com/waInstance7103950339/sendMessage/c386440fc8df43e5835e315c23fa51af7b15f6f4411c4a5881
+      - CHATID_PHONE=
+      - URL=
       - CONTENT_TYPE=application/json
 
   proxymanager:
