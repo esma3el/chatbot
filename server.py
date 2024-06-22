@@ -15,7 +15,8 @@ def chatbot_route():
     if key not in KEYS:
         return Response("Error : UNAUTHORIZED ACCESS\n",status=401)
     msg = request.json
-    response = send_message(msg)
+    
+    send_message(msg)
     return Response("success.",status=200)
 
 if __name__ == "__main__":
